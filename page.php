@@ -1,5 +1,4 @@
 
-<title><?php echo get_the_title(); ?></title>
 <?php get_header(); ?>
 
 
