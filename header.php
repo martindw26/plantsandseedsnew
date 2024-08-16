@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <meta charset="<?php bloginfo( 'charset' ); ?>">
+    <title class="notranslate"><?php echo get_the_title(); ?></title>
     <?php wp_head();?>
 
     <?php 
