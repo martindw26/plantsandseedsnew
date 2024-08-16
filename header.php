@@ -7,17 +7,16 @@
     <?php wp_head(); ?>
 
     <?php 
-    // Retrieve the custom fields only once and ensure correct usage of get_field()
+    // Ensure correct usage of get_field() to assign values to variables
     $leaderboard_top_script = get_field('leaderboard_top_script', 'option');
     $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
     $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
     $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
     $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
     ?>
-
 </head>
-<body>
 
+<body>
 <div class="container-fluid text-white" style="height:60px; padding-top:8px; background-color:black;">
     <div class="social_share_header">
         <?php
@@ -32,7 +31,6 @@
 <header>
     <nav class="navbar navbar-expand-lg fs-4" style="background-color: white;">
         <div class="container">
-
             <?php 
             $site_logo = get_field('site_logo', 'option'); 
             $site_logo_url = get_field('site_logo_url', 'option'); 
@@ -63,7 +61,6 @@
                     ?>
                 </ul>
             </div>
-
         </div>
     </nav>
 </header>
