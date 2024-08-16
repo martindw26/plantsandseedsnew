@@ -1,5 +1,16 @@
 <?php
 
+<title><?php wp_title(''); ?></title>
+<script type="text/javascript">
+    document.addEventListener('DOMContentLoaded', function() {
+        // Get the current page/post title
+        var pageTitle = document.title;
+
+        // Modify the title dynamically as needed
+        // For example, appending " - Custom Suffix"
+        document.title = pageTitle + " - Custom Suffix";
+    });
+</script>
 // Load style sheets
 function load_css() {
     wp_register_style('bootstrap', get_template_directory_uri() . '/css/bootstrap.min.css', array(), '1.0', 'all');
