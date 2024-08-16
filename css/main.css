@@ -1,5 +1,9 @@
 /* ################# Global styles ################# */
 
+[class*="button"] {
+    font-size: 24px
+}
+
 .scriptlesssocialsharing {
     box-sizing: border-box;
     margin: 0px!important;
