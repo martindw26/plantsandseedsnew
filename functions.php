@@ -196,3 +196,11 @@ function make_custom_post_status_column_sortable($columns) {
     return $columns;
 }
 add_filter('manage_edit-post_sortable_columns', 'make_custom_post_status_column_sortable');
+
+
+add_filter( 'document_title_parts', function( $title ) {
+  if ( is_singular() ) {
+      $title['title'] = get_the_title() . ' - HTML Elements Reference';
+  }
+  return $title;
+});
