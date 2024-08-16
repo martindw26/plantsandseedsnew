@@ -4,34 +4,32 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <?php wp_head();?>
+    <?php wp_head(); ?>
 
     <?php 
-
-$leaderboard_top_script = get_field('leaderboard_ros_top_script', 'option');
-$leaderboard_top_script = get_field('leaderboard_top_script', 'option');
-$leaderboard_middle_script = the_field('leaderboard_middle_script', 'option');
-$sidebar_mpu_top_script = the_field('sidebar_mpu_top_script', 'option');
-$sidebar_mpu_middle_script = the_field('sidebar_mpu_middle_script', 'option');
-$sidebar_mpu_bottom_script = the_field('sidebar_mpu_bottom_script', 'option');
-
-?>
+    // Retrieve the custom fields only once and ensure correct usage of get_field()
+    $leaderboard_top_script = get_field('leaderboard_top_script', 'option');
+    $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
+    $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
+    $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
+    $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
+    ?>
 
 </head>
+<body>
 
 <div class="container-fluid text-white" style="height:60px; padding-top:8px; background-color:black;">
     <div class="social_share_header">
-                <?php
-                $headersocialshare = get_field('headersocialshare', 'option');
-                if ($headersocialshare === 'yes') {
-                    echo do_shortcode('[scriptless]');
-                }
-                ?>
+        <?php
+        $headersocialshare = get_field('headersocialshare', 'option');
+        if ($headersocialshare === 'yes') {
+            echo do_shortcode('[scriptless]');
+        }
+        ?>
     </div>
 </div>  
 
 <header>
-
     <nav class="navbar navbar-expand-lg fs-4" style="background-color: white;">
         <div class="container">
 
@@ -40,7 +38,7 @@ $sidebar_mpu_bottom_script = the_field('sidebar_mpu_bottom_script', 'option');
             $site_logo_url = get_field('site_logo_url', 'option'); 
             
             if ($site_logo) {
-                echo '<a href="' . $site_logo_url . '"><div class="site-title"><img src="' . $site_logo . '"></div></a>';
+                echo '<a href="' . esc_url($site_logo_url) . '"><div class="site-title"><img src="' . esc_url($site_logo) . '" alt="Site Logo"></div></a>';
             } else { 
                 echo '<h1 class="site-title">Plants &amp; Seeds</h1>';
             }
@@ -60,33 +58,28 @@ $sidebar_mpu_bottom_script = the_field('sidebar_mpu_bottom_script', 'option');
                         'fallback_cb' => '__return_false',
                         'items_wrap' => '%3$s',
                         'depth' => 2,
-                        'walker' => new WP_Bootstrap_Navwalker()
+                        'walker' => new WP_Bootstrap_Navwalker(),
                     ));
                     ?>
                 </ul>
             </div>
 
-            
-
         </div>
     </nav>
-    
 </header>
-
 
 <?php 
 if (is_page_template('front-page.php')) {
-  $leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
-  $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
+    $leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
+    $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
 
-  if ($leaderboard_top_body_script_switch === 'on') {
-      echo '<section class="ad_header_top">';
-      echo $leaderboard_top_body_script;
-      echo '</section>';
-  }
+    if ($leaderboard_top_body_script_switch === 'on') {
+        echo '<section class="ad_header_top">';
+        echo $leaderboard_top_body_script;
+        echo '</section>';
+    }
 }
 ?>
-
 
 <script>
     jQuery(document).ready(function($) {
@@ -98,11 +91,10 @@ if (is_page_template('front-page.php')) {
     });
 </script>
 
-
-
-
 <div class="container">
+    <!-- Content goes here -->
+</div>
 
-
-<body>
-
+<?php wp_footer(); ?>
+</body>
+</html>
