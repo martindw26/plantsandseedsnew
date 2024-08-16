@@ -1,16 +1,6 @@
 <?php ob_start(); ?>
 
-<title><?php wp_title(''); ?></title>
-    <script type="text/javascript">
-        document.addEventListener('DOMContentLoaded', function() {
-            // Get the current page/post title
-            var pageTitle = document.title;
-
-            // Modify the title dynamically as needed
-            // For example, appending " - Custom Suffix"
-            document.title = pageTitle + " - Custom Suffix";
-        });
-    </script>
+<script>document.title = "<?php echo $new_title; ?>";</script>
 
 <!DOCTYPE html>
 <html lang="en">
