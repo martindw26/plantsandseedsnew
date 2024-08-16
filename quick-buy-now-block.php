@@ -15,7 +15,9 @@ $qb_background_hover_color = get_field('background_color_hover');
 <div class="quik-buy-now-button-custom-block-preview">
 <div class="quik-buy-now-button-custom-block" style="background-color: <?php echo esc_attr($qb_background_color); ?>; color: <?php echo esc_attr($qb_text_color); ?>; border: <?php echo esc_attr($qb_border_size . ' ' . $qb_border_type . ' ' . $qb_border_color); ?>;">
         <div class="centered-text">
-            <a href="<?php echo esc_url($qb_button_url); ?>" target="<?php echo esc_attr($qb_button_target); ?>"><?php echo esc_html($qb_single_product_button_text); ?></a>
+        <a href="<?php echo esc_url($qb_button_url); ?>" target="<?php echo esc_attr($qb_button_target); ?>" aria-label="<?php echo esc_attr($qb_single_product_button_text); ?>">
+            <?php echo esc_html($qb_single_product_button_text); ?>
+        </a>
         </div>
     </div>
 </div>
@@ -83,7 +85,6 @@ $qb_background_hover_color = get_field('background_color_hover');
     }
 
     .quik-buy-now-button-custom-block-preview .quik-buy-now-button-custom-block {
-        font-size: 22px !important;
         cursor: pointer;
         width: 100%;
         min-width: 75px;
