@@ -9,6 +9,7 @@
     }
 
 
+
 [class*="button"] {
     font-size: 24px!important;
 }
@@ -628,8 +629,7 @@ height: 610px;
 background-color: #f2f2f242;
 margin: 0 auto;
 position: relative; 
-border: 1px solid #000000!important;
-
+}
 
 .sidebar-ad-container-middle .sidebar-mpu-middle  {
 position: absolute; 
@@ -646,8 +646,7 @@ width: 300px;
     background-color: #f2f2f242;
     margin: 0 auto;
     position: relative; 
-    border: 1px solid #000000!important;
-}
+    
     
     .sidebar-ad-container-bottom .sidebar-mpu-bottom {
     position: absolute; 
@@ -674,6 +673,12 @@ width: 300px;
             width: 300px;
         }
     
+
+
+
+
+        
+
 /* ################# Post styles #################*/
 
 img {
