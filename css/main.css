@@ -8,15 +8,6 @@
     --ad-background-color: #f2f2f2;
     }
 
-    <?php $background_color = get_field('site_background_color','option');?>;
-
-
-    body {
-        background-color: #f1eee9;
-    }
-    
-
-
 [class*="button"] {
     font-size: 24px!important;
 }

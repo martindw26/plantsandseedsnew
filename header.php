@@ -10,6 +10,20 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo get_the_title(); ?></title>
+
+
+
+    <?php $background_color = get_field('site_background_color','option');?>;
+
+
+    <style>
+        body {
+            background-color: #f1eee9 !important;
+        }
+    </style>
+    
+
+
     <?php wp_head();?>
 
     <?php 
