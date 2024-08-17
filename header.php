@@ -17,11 +17,11 @@
 
     <style>
         body {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;
+            background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important;
         }
 
         .scriptlesssocialsharing, .container-fluid text-black {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important
+            background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important
             
     </style>
     
