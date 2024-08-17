@@ -13,8 +13,7 @@
 
 
 
-    <?php $background_color = get_field('site_background_color','option');?>;
-
+    <?php $background_color = get_field('site_background_color','option');?>
 
     <style>
         body {
