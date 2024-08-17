@@ -17,7 +17,7 @@
 
 
     <style>
-        body {
+        body .scriptlesssocialsharing {
             background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;
         }
     </style>
