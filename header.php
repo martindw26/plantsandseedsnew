@@ -20,10 +20,6 @@ $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
-
-$ad_border_size = get_field('ad-border-size', 'option');
-$ad_border_type = get_field('ad-border-type', 'option');
-$ad_border_colour = get_field('ad-border-color', 'option');
 ?>
 
 
@@ -34,13 +30,6 @@ $ad_border_colour = get_field('ad-border-color', 'option');
 
         .scriptlesssocialsharing, .container-fluid text-black {
             background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important
-
-            .sidebar-ad-container-middle, .sidebar-ad-container-bottom{
-            border: <?php echo get_field('ad-border-size','option'); ?> 
-                    <?php echo get_field('ad-border-type','option'); ?> 
-                    <?php echo get_field('ad-border-color','option'); ?>;
-        }
-
 
     </style>
     
