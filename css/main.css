@@ -13,7 +13,7 @@
     }
 
     .body {
-        background-color: var(--site-background-color);
+        background-color: var(--site-background-color)!important;
     }
 
 
