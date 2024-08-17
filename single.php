@@ -83,7 +83,7 @@ if ($sidebartogglesingle === "yes") {
                     <div class="container">
                 <?php the_content(); ?>
                     </div>
-                    <div class="container-fluid text-black" style="height:60px; padding-top:8px; background-color:white;">
+                    <div class="container-fluid text-black" style="height:60px; padding-top:8px; background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;">
     <div class="social_share_header">
                 <?php
                 $on_article = get_field('on_article', 'option');
