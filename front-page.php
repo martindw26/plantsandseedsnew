@@ -94,7 +94,6 @@ get_header();
     <?php
     $latesttextpoststitle = get_field('text_block_title','option');
     ?>
-    <h2 class="post-featured-block-title"><?php echo $latesttextpoststitle; ?></h2>
     <?php
     $latesttextposts = get_field('text_block_posts','option');
     $latesttextpostsoffset = get_field('text_block_posts_offset','option');
