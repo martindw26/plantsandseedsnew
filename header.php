@@ -12,21 +12,8 @@
     <title><?php echo get_the_title(); ?></title>
 
 
-
-    <?php $background_color = get_field('site_background_color','option');?>
-
-    <style>
-        body {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;
-        }
-
-        .scriptlesssocialsharing, .container-fluid text-black {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important
-    </style>
-    
-    <?php wp_head();?>
-
 <?php 
+$background_color = get_field('site_background_color','option');
 $leaderboard_top_script = get_field('leaderboard_ros_top_script', 'option');
 $leaderboard_top_script = get_field('leaderboard_top_script', 'option');
 $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
@@ -38,6 +25,26 @@ $ad_border_size = get_field('ad-border-size', 'option');
 $ad_border_type = get_field('ad-border-type', 'option');
 $ad_border_colour = get_field('ad-border-color', 'option');
 ?>
+
+
+    <style>
+        body {
+            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;
+        }
+
+        .scriptlesssocialsharing, .container-fluid text-black {
+            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important
+
+            .sidebar-ad-container-middle, .sidebar-ad-container-bottom{
+            border: <?php echo get_field('ad-border-size','option'); ?> 
+                    <?php echo get_field('ad-border-type','option'); ?> 
+                    <?php echo get_field('ad-border-color','option'); ?>;
+        }
+
+
+    </style>
+    
+    <?php wp_head();?>
 
 </head>
 

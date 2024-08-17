@@ -671,16 +671,6 @@ width: 300px;
             width: 300px;
         }
     
-
-        .sidebar-ad-container-middle, .sidebar-ad-container-bottom{
-            border: <?php echo get_field('ad-border-size','option'); ?> 
-                    <?php echo get_field('ad-border-type','option'); ?> 
-                    <?php echo get_field('ad-border-color','option'); ?>;
-        }
-
-
-        
-
 /* ################# Post styles #################*/
 
 img {
