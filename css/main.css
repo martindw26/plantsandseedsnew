@@ -8,6 +8,7 @@
     --ad-background-color: #f2f2f2;
     }
 
+
 [class*="button"] {
     font-size: 24px!important;
 }
@@ -636,7 +637,6 @@ left: 50%;
 transform: translate(-50%, -50%); 
 height: 250px;
 width: 300px;
-border:1px solid #000000;
 }
 
 .sidebar-ad-container-bottom {
@@ -645,7 +645,6 @@ border:1px solid #000000;
     background-color: #f2f2f242;
     margin: 0 auto;
     position: relative; 
-    border:1px solid #000000;
     
     
     .sidebar-ad-container-bottom .sidebar-mpu-bottom {
@@ -655,7 +654,6 @@ border:1px solid #000000;
     transform: translate(-50%, -50%); 
     height: 250px;
     width: 300px;
-    border:1px solid #000000;
     }
 
     .sidebar-mpu-bottom {
@@ -674,6 +672,12 @@ border:1px solid #000000;
             width: 300px;
         }
     
+
+
+
+
+        
+
 /* ################# Post styles #################*/
 
 img {
