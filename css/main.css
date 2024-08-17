@@ -673,9 +673,11 @@ width: 300px;
         }
     
 
-        .sidebar-ad-container-middle .sidebar-ad-container-bottom{
-        border: 1px solid #000000;
+        .sidebar-ad-container-middle,
+        .sidebar-ad-container-bottom {
+            border: 1px solid #000000!important;
         }
+        
         
 
 /* ################# Post styles #################*/
