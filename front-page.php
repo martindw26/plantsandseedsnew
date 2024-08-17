@@ -187,7 +187,7 @@ if ($leaderboard_middle_body_script_switch === 'on') {
         ?>
 
 <div class="mt-2">
-
+<h2 class="post-featured-block-title"><?php echo $homepage_featured_title ?></h2>
     <div class="row">
 
             <div class="col-lg-7">
