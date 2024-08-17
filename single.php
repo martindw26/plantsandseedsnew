@@ -83,7 +83,7 @@ if ($sidebartogglesingle === "yes") {
                     <div class="container">
                 <?php the_content(); ?>
                     </div>
-                    <div class="container-fluid text-black" style="height:60px; padding-top:8px;>
+                    <div class="container-fluid text-black" style="height:60px; padding-top:8px;">
     <div class="social_share_header">
                 <?php
                 $on_article = get_field('on_article', 'option');
