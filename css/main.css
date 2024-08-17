@@ -1,5 +1,23 @@
 /* ################# Global styles ################# */
 
+/* ################# Global colors ################# */
+
+:root {
+    --green-underline: #198754;
+    --default-title-color: #000;
+    --ad-background-color: #f2f2f2;
+    --site-background-color-beige: <?php 
+        $background_color = get_field('site_background_color','option');
+        echo esc_attr($background_color ? $background_color : '#ffffff'); 
+    ?>;
+}
+
+
+.body{
+background-color: var(--site-background-color);
+}
+
+
 [class*="button"] {
     font-size: 24px!important;
 }
@@ -24,7 +42,7 @@ margin: 0 0 16px;
     font-family: Raleway, sans-serif;
 }
 
-header {
+.header {
 background: #000;
 width: 100%;
 }
@@ -41,16 +59,6 @@ border-right: 1px solid #555;
     font-family: 'Dashicons';
     content: '\f102';
 }
-
-
-/* ################# Global colors ################# */
-
-:root {
-    --green-underline: #198754;
-    --default-title-color: #000;
-    --ad-background-color: #f2f2f2;
-  }
-
 
 /* ############# Block styles ############### */
 
