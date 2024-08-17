@@ -90,7 +90,7 @@ get_header();
 </div>
 
 
-<div class="col-lg-4 mt-3">
+<div class="col-lg-4 mt-5">
     <?php
     $latesttextpoststitle = get_field('text_block_title','option');
     ?>
