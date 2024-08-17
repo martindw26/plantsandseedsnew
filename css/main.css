@@ -6,16 +6,15 @@
     --green-underline: #198754;
     --default-title-color: #000;
     --ad-background-color: #f2f2f2;
-    --site-background-color-beige: <?php 
-        $background_color = get_field('site_background_color','option');
-        echo esc_attr($background_color ? $background_color : '#ffffff'); 
-    ?>;
-}
+    --site-background-color: <?php 
+            $background_color = get_field('site_background_color','option');
+            echo esc_attr($background_color ? $background_color : '#ffffff'); 
+        ?>;
+    }
 
-
-.body{
-background-color: var(--site-background-color);
-}
+    .body {
+        background-color: var(--site-background-color);
+    }
 
 
 [class*="button"] {
