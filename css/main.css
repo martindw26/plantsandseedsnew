@@ -629,7 +629,7 @@ height: 610px;
 background-color: #f2f2f242;
 margin: 0 auto;
 position: relative; 
-border:1px solid black;
+border:1px solid #0000001f;
 }
 
 .sidebar-ad-container-middle .sidebar-mpu-middle  {
@@ -647,7 +647,7 @@ width: 300px;
     background-color: #f2f2f242;
     margin: 0 auto;
     position: relative; 
-    
+    border:1px solid #0000001f;
     
     .sidebar-ad-container-bottom .sidebar-mpu-bottom {
     position: absolute; 
