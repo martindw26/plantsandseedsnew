@@ -11,8 +11,9 @@
     <?php $background_color = get_field('site_background_color','option');?>;
 
 
-    .body {
-        background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important;
+    body {
+       /*background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important;*/
+       background-color:#f1eee9;
     }
 
 
