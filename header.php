@@ -18,23 +18,19 @@
 
     <style>
         body {
-            background-color: #f1eee9 !important;
+            background-color: <?php echo esc_attr($background_color ? $background_color : '#f1eee9'); ?> !important;
         }
     </style>
     
-
-
     <?php wp_head();?>
 
-    <?php 
-
+<?php 
 $leaderboard_top_script = get_field('leaderboard_ros_top_script', 'option');
 $leaderboard_top_script = get_field('leaderboard_top_script', 'option');
 $leaderboard_middle_script = the_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = the_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = the_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = the_field('sidebar_mpu_bottom_script', 'option');
-
 ?>
 
 </head>
