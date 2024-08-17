@@ -310,6 +310,9 @@ if ($leaderboard_middle_body_script_switch === 'on') {
 <?php 
 $leaderboard_bottom_body_script = get_field('leaderboard_bottom_body_script', 'option');
 $leaderboard_bottom_body_script_switch = get_field('leaderboard_bottom_body_script_switch', 'option');
+$four_col_block_featured_title = get_field('four_col_block_featured_title', 'option');
+
+
 
 if ($leaderboard_bottom_body_script_switch === 'on') {
     echo '<section class="ad_header_top">';
