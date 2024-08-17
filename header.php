@@ -9,22 +9,7 @@
     <link rel="manifest" href="/site.webmanifest">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title><?php echo get_the_title(); ?></title>
-
-
-
-    <?php $background_color = get_field('site_background_color','option');?>
-
-    <style>
-        body {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important;
-        }
-
-        .scriptlesssocialsharing, .container-fluid text-black {
-            background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important
-            
-    </style>
-    
+    <title><?php echo get_the_title(); ?></title>    
     <?php wp_head();?>
 
 <?php 
