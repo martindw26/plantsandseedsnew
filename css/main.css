@@ -12,9 +12,9 @@
 
 
     body {
-       /*background-color: <?php echo esc_attr($background_color ? $background_color : '#ffffff'); ?> !important;*/
-       background-color:#f1eee9;
+        background-color: #f1eee9;
     }
+    
 
 
 [class*="button"] {
