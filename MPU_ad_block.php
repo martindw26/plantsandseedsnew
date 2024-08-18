@@ -27,7 +27,7 @@
 
 </style>
 <?php
-$in_content_mpu_script = get_field('in-content_mpu_script', 'option');
+$in_content_mpu_bottom_script = get_field('in-content_mpu_script', 'option');
 ?>
 
 
