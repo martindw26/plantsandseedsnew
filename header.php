@@ -5,10 +5,6 @@
 <head>
 <?php 
 $header_scripts = get_field('header_scripts', 'option');
-
-if ($header_scripts) {
-    echo wp_kses_post($header_scripts);
-}
 ?>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
