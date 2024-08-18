@@ -35,12 +35,6 @@
         <p>Advertisement</p>
     </div>
     <div class="mpu-in_content_block">
-          <?php
-            echo do_shortcode('[adinserter name="In-Content MPU Block"]');
-           ?>
-
-
-
     </div>
 </div>
 <!-- End Ad block middle -->
