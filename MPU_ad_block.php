@@ -23,21 +23,19 @@
             .ad-container-in_content {
                 max-width: 100%;
                 height: auto;
-                background-color: #f2f2f2;
             }
         }
 
         @media only screen and (max-width: 480px) {
             .ad-container-in_content {
                 height: 350px;
-                background-color: #f2f2f2;
             }
         }
     </style>
 
     <?php
-    // Get the in-content MPU script field and sanitize output
-    $in_content_mpu_bottom_script = wp_kses_post(get_field('in-content_mpu_script', 'option'));
+    // Retrieve and sanitize the in-content MPU script
+    $in_content_mpu_script = wp_kses_post(get_field('in-content_mpu_script', 'option'));
     ?>
 </head>
 
@@ -48,9 +46,15 @@
     </div>
     <div class="mpu-in_content_block">
         <?php 
-        // Safely output the MPU script
-        $in_content_mpus = wp_kses_post(get_field('in-content_mpus_body_script', 'option'));
-        echo $in_content_mpus;
+        // Retrieve and sanitize the MPU body script
+        $in_content_mpus_body_script = wp_kses_post(get_field('in-content_mpus_body_script', 'option'));
+
+        // Check if the MPU script is available before echoing
+        if (!empty($in_content_mpus_body_script)) {
+            echo $in_content_mpus_body_script;
+        } else {
+            echo '<!-- No MPU script available -->';
+        }
         ?>
     </div>
 </aside>
