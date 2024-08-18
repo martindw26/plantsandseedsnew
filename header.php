@@ -3,6 +3,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php 
+$header_scripts = get_field('header_scripts', 'option');
+
+if ($header_scripts) {
+    echo wp_kses_post($header_scripts);
+}
+?>
+
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -19,8 +27,6 @@ $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
-$header_scripts = get_field('header_scripts', 'option');
-echo $header_scripts;
 ?>
 
 </head>
