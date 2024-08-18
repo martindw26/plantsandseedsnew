@@ -19,12 +19,7 @@ $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
-
-
-
-$ad_border_size = get_field('ad-border-size', 'option');
-$ad_border_type = get_field('ad-border-type', 'option');
-$ad_border_colour = get_field('ad-border-color', 'option');
+$header_scripts = get_field('header_scripts', 'option');
 ?>
 
 </head>
