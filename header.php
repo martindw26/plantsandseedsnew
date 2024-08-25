@@ -19,6 +19,24 @@ echo $header_scripts;
 
 <!-- Adtech -->
 
+
+
+<script>
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
+googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+googletag.pubads().enableSingleRequest();
+googletag.enableServices();
+});
+</script>
+
 <?php  
 $adtech_header_script = get_field('adtech_header_script', 'option');
 echo $adtech_header_script;
@@ -50,24 +68,6 @@ googletag.cmd.push(function() {
     googletag.enableServices();
 });
 </script>
-
-
-<script>
-window.googletag = window.googletag || {cmd: []};
-googletag.cmd.push(function() {
-googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
-googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
-googletag.pubads().enableSingleRequest();
-googletag.enableServices();
-});
-</script>
-
 
 
 
