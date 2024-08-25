@@ -2,9 +2,13 @@
 
 <div class="container p-2 mt-2">
 <?php 
-$ros_ad_header = get_field('ros_ad_header', 'option');
 
-if ($ros_ad_header === 'on') {
+
+if (!is_singular()) {
+    $leaderboard_ros_top_header_path = get_field('$leaderboard_ros_top_header_path', 'option');
+}
+
+if ($ros_ad_header === 'on' && is_single()) { // Check if $ros_ad_header is 'on' and the current post is a single post
     echo '<section class="ros_ad_header">';
     $leaderboard_ros_top_body_script = get_field('leaderboard_ros_top_body_script', 'option');
     $leaderboard_top_body_script_switch = get_field('ros_ad_header', 'option');
@@ -15,7 +19,8 @@ if ($ros_ad_header === 'on') {
         echo '</section>';
     }
     echo '</section>';
-} 
+}
+
 ?>
 </div>
 
