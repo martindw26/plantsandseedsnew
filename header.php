@@ -24,8 +24,8 @@ echo $header_scripts;
 // Only show on the homepage and landing pages
 if (!is_singular()) {
     $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
-    $leaderboard_hp_middle_header_path = get_field('leaderboard_middle_header_path', 'option');
-    $leaderboard_hp_bottom_header_path = get_field('leaderboard_bottom_header_path', 'option');
+    $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
+    $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
 }
 // Only show on posts
 
