@@ -1,11 +1,4 @@
 <head>
-
-<?php
-$incontentmpuheader = get_field('in-content_mpu_header', 'option');
-echo $incontentmpuheader;
-?>
-
-
 <style>
 .ad-container-in_content{
     width: 400px;

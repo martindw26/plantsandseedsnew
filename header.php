@@ -30,6 +30,9 @@ $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
 
 
 
+$incontentmpuheader = get_field('in-content_mpu_header', 'option');
+echo $incontentmpuheader;
+
 
 //Affilaites
 $affiliate_scripts = get_field('affiliate_scripts', 'option');
