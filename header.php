@@ -27,13 +27,16 @@ if (!is_singular()) {
     $leaderboard_hp_middle_header_path = get_field('leaderboard_middle_header_path', 'option');
     $leaderboard_hp_bottom_header_path = get_field('leaderboard_bottom_header_path', 'option');
 }
+// Only show on posts
 
+if (is_singular()) {
+    $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
+    $sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
+    $sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
+    $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
+    $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
+    }
 // You can keep other fields if they are required outside of the 'is_single' check
-$leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
-$sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
-$sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
-$sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
-$incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 $adtech_header_script = get_field('adtech_header_script', 'option');
 
 echo $adtech_header_script;
