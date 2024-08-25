@@ -29,6 +29,7 @@ $sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option'
 $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
 $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
 $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
+$leaderboard_hp_middle_1_header_path = get_field('leaderboard_home_page_middle_1_path', 'option');
 $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
 $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
 
@@ -45,9 +46,9 @@ googletag.cmd.push(function() {
     googletag.defineSlot('<?php echo ($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
     googletag.defineSlot('<?php echo ($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
     googletag.defineSlot('<?php echo ($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($leaderboard_hp_middle_1_header_path); ?>').addService(googletag.pubads());
     googletag.defineSlot('<?php echo ($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
     googletag.defineSlot('<?php echo ($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
-
     // Enable single request mode for faster ad loading
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
