@@ -152,13 +152,6 @@ $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_swi
 if ($leaderboard_top_body_script_switch === 'on') {
     echo '<section class="ad_header_top">';
     echo $leaderboard_top_body_script;
-    echo "<!-- /22820672/plants_and_seeds/homepageleadertop -->
-    <div id='div-gpt-ad-1724617993100-0' style='min-width: 320px; min-height: 50px;'>
-      <script>
-        googletag.cmd.push(function() { googletag.display('div-gpt-ad-1724617993100-0'); });
-      </script>
-    </div>";
-    
     echo '</section>';
 } 
 ?>
