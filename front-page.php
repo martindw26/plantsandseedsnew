@@ -145,13 +145,13 @@ $category_link = get_category_link($category->term_id);
 
 
 <?php 
-$leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
-$leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
+$leaderboard_middle_1_body_script = get_field('leaderboard_middle_1_body_script', 'option');
+$leaderboard_middle_1_body_script_switch = get_field('leaderboard_middle_1_body_script_switch', 'option');
 
 
-if ($leaderboard_top_body_script_switch === 'on') {
+if ($leaderboard_top_middle_1_script_switch === 'on') {
     echo '<section class="ad_header_top">';
-    echo $leaderboard_top_body_script;
+    echo $leaderboard_middle_1_body_script;
     echo '</section>';
 } 
 ?>
