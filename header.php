@@ -24,63 +24,29 @@ echo $header_scripts;
 $adtech_header_script = get_field('adtech_header_script', 'option');
 echo $adtech_header_script;
 
-// Initialize ad paths with default values
-$leaderboard_hp_top_header_path = '';
-$leaderboard_hp_middle_header_path = '';
-$leaderboard_hp_bottom_header_path = '';
-$leaderboard_ros_top_header_path = '';
-$sidebar_mpu_top_header_path = '';
-$sidebar_mpu_middle_header_path = '';
-$sidebar_mpu_bottom_header_path = '';
-$incontent_mpu_header_path = '';
-
-// Check if the page is singular (e.g., a post)
-if (is_singular()) {
-    $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
-    $sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
-    $sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
-    $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
-    $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
-} else { 
-    // If not singular (e.g., homepage or landing pages)
-    $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
-    $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
-    $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
-}
+// Fetch all ad paths
+$leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
+$leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
+$leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
+$leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
+$sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
+$sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
+$sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
+$incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 ?>
 
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
-    <?php if (is_singular()) : ?>
-      // Define ad slots for singular pages (posts)
-      <?php if (!empty($incontent_mpu_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($incontent_mpu_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($sidebar_mpu_top_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($sidebar_mpu_middle_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($sidebar_mpu_bottom_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($leaderboard_ros_top_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-    <?php else : ?>
-      // Define ad slots for non-singular pages (homepage or landing pages)
-      <?php if (!empty($leaderboard_hp_top_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($leaderboard_hp_middle_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-      <?php if (!empty($leaderboard_hp_bottom_header_path)) : ?>
-        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
-      <?php endif; ?>
-    <?php endif; ?>
+    // Define ad slots for all possible ad paths
+    googletag.defineSlot('<?php echo esc_js($incontent_mpu_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
 
     // Enable Single Request and services
     googletag.pubads().enableSingleRequest();
