@@ -150,12 +150,12 @@ $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_swi
 
 if ($leaderboard_top_body_script_switch === 'on' && !empty($leaderboard_top_body_script)) {
     echo '<section class="ad_header_top">';
-    echo wp_kses_post($leaderboard_top_body_script);  // Sanitizing the output to allow only safe HTML tags
+    echo wp_kses_post($leaderboard_top_body_script);  
     echo '</section>';
 } 
 ?>
 
-
+<?php echo $leaderboard_top_body_script;?>
 
 
 <!-- ################ MIDDLE SECTION ################### -->
