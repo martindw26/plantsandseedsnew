@@ -1,5 +1,4 @@
 <head>
-
 <style>
 .ad-container-in_content{
     width: 400px;
@@ -35,6 +34,12 @@
         <p>Advertisement</p>
     </div>
     <div class="mpu-in_content_block">
+<!-- /22820672/plants_and_seeds/incontentmpu -->
+<div id='div-gpt-ad-1724595319590-0' style='min-width: 300px; min-height: 250px;'>
+  <script>
+    googletag.cmd.push(function() { googletag.display('div-gpt-ad-1724595319590-0'); });
+  </script>
+</div>
     </div>
 </div>
 <!-- End Ad block middle -->
