@@ -307,18 +307,18 @@ if ($leaderboard_middle_1_body_script_switch === 'on') {
 </div>
 
 <?php 
-$leaderboard_bottom_body_script = get_field('leaderboard_bottom_body_script', 'option');
-$leaderboard_bottom_body_script_switch = get_field('leaderboard_bottom_body_script_switch', 'option');
+$leaderboard_middle_body_script = get_field('leaderboard_middle_body_script', 'option');
+$leaderboard_middle_body_script_switch = get_field('leaderboard_middle_body_script_switch', 'option');
 $four_col_block_featured_title = get_field('four_col_block_featured_title', 'option');
 
 
-
-if ($leaderboard_bottom_body_script_switch === 'on') {
+if ($leaderboard_middle_body_script_switch === 'on') {
     echo '<section class="ad_header_top">';
-    echo $leaderboard_bottom_body_script;
+    echo $leaderboard_middle_body_script;
     echo '</section>';
 } 
 ?>
+
 <!-- ################ BOTTOM SECTION ################### -->
 
 <h2 class="post-featured-block-title"><?php echo $four_col_block_featured_title?></h2>
@@ -372,6 +372,7 @@ if ($leaderboard_bottom_body_script_switch === 'on') {
     echo '</section>';
 } 
 ?>
+
 
 </div>
 
