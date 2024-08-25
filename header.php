@@ -19,17 +19,53 @@ echo $header_scripts;
 
 <!-- ACF Fields -->
 
-<?php 
-//Ads
-$leaderboard_top_script = get_field('leaderboard_ros_top_script', 'option');
-$leaderboard_top_script = get_field('leaderboard_top_script', 'option');
-$leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
-$sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
-$sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
-$sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
-$incontentmpuheader = get_field('in-content_mpu_header', 'option');
+<?php
+// Fetching fields from options
+$leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
+$leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
+$leaderboard_hp_middle_header_path = get_field('leaderboard_middle_header_path', 'option');
+$leaderboard_hp_bottom_header_path = get_field('leaderboard_bottom_header_path', 'option');
+$sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
+$sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
+$sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
+$incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
+$adtech_header_script = get_field('adtech_header_script', 'option');
+
+echo $adtech_header_script;
+?>
+
+<script>
+  window.googletag = window.googletag || {cmd: []};
+  googletag.cmd.push(function() {
+    // In-content MPU
+    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
+
+    // Sidebar top MPU
+    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
+
+    // Sidebar Middle MPU
+    googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
+
+    // Sidebar Bottom MPU
+    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
+
+    // Homepage Top Leaderboard
+    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
+
+    // Homepage Leaderboard Middle
+    googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
+
+    // Homepage Leaderboard Bottom
+    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+
+    // Enable Single Request and services
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+  });
+</script>
 
 
+<?php
 //Affilaites
 $affiliate_scripts = get_field('affiliate_scripts', 'option');
 echo $affiliate_scripts;
