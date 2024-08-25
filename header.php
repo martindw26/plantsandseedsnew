@@ -142,7 +142,7 @@ echo $affiliate_scripts;
 
 <?php 
 if (is_page_template('front-page.php')) {
-  $leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
+  $leaderboard_top_body_script = get_field('leaderboard_hp_top_header_script', 'option');
   $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
 
   if ($leaderboard_top_body_script_switch === 'on') {
