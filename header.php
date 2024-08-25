@@ -20,11 +20,8 @@ echo $header_scripts;
 <!-- Adtech -->
 
 <?php  
-// Fetch the global adtech header script
 $adtech_header_script = get_field('adtech_header_script', 'option');
 echo $adtech_header_script;
-
-// Fetch all ad paths
 $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
 $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
 $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
@@ -38,7 +35,6 @@ $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 <script>
 window.googletag = window.googletag || {cmd: []};
 googletag.cmd.push(function() {
-    // Define all ad slots using the values fetched from ACF fields
 googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
 googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
 googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
@@ -47,8 +43,6 @@ googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addServi
 googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
 googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
 googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
-
-    // Enable Single Request and services
 googletag.pubads().enableSingleRequest();
 googletag.enableServices();
 });
