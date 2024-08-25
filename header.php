@@ -35,24 +35,26 @@ $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'o
 $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 ?>
 
+<script async src="https://securepubads.g.doubleclick.net/tag/js/gpt.js"></script>
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
     // Define all ad slots using the values fetched from ACF fields
-    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>', [300, 250], 'incontent-mpu').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>', [300, 250], 'sidebar-mpu-top').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>', [300, 250], 'sidebar-mpu-middle').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>', [300, 250], 'sidebar-mpu-bottom').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>', [728, 90], 'leaderboard-ros-top').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>', [728, 90], 'leaderboard-hp-top').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>', [728, 90], 'leaderboard-hp-middle').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>', [728, 90], 'leaderboard-hp-bottom').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>', [[300, 250], [320, 50]], 'incontent-mpu').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>', [[300, 600], [300, 250]], 'sidebar-mpu-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>', [[300, 250], [300, 600]], 'sidebar-mpu-middle').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>', [[300, 250], [300, 600]], 'sidebar-mpu-bottom').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>', [[728, 90], [320, 50]], 'leaderboard-ros-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>', [[728, 90], [320, 50]], 'leaderboard-hp-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>', [[728, 90], [320, 50]], 'leaderboard-hp-middle').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>', [[728, 90], [320, 50]], 'leaderboard-hp-bottom').addService(googletag.pubads());
 
     // Enable Single Request and services
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
 </script>
+
 
 
 
