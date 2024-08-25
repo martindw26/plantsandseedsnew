@@ -168,27 +168,10 @@ if ($sidebartogglesingle === "yes") {
                     <p>Advertisement</p>
                 </div>
                 <div class="sidebar-mpu-middle">
-              
                 <?php 
-$sidebar_mpu_top = get_field('sidebar_mpu_top', 'option');
-
-switch ($sidebar_mpu_top) {
-    case 'sbtopmpu':
-        // Code to execute if $in_content_mpus is 'inmpu'
-        if (function_exists('adinserter')) {
-            echo adinserter(2);
-        }
-        break;
-    case 'sponsoredsbtopmpu':
-        // Code to execute if $in_content_mpus is 'sponsoredinmpu'
-        echo $sidebar_mpu_top;
-        break;
-    // Add more cases if needed
-    default:
-        // Code to execute if $in_content_mpus doesn't match any case
-        echo "Default case";
-}
-?>
+                $sidebar_mpu_top = get_field('sidebar_mpu_top', 'option');
+                echo $sidebar_mpu_top;
+                ?>
 
 
 
@@ -263,25 +246,9 @@ switch ($sidebar_mpu_top) {
     <div class="sidebar-mpu-bottom">
    
     <?php 
-$sidebar_mpu_bottom = get_field('sidebar_mpu_bottom', 'option');
-
-switch ($sidebar_mpu_bottom) {
-    case 'sbbottompmpu':
-        // Code to execute if $in_content_mpus is 'inmpu'
-        if (function_exists('adinserter')) {
-            echo adinserter(3);
-        }
-        break;
-    case 'sponsoredsbbottommpu':
-        // Code to execute if $in_content_mpus is 'sponsoredinmpu'
-        echo $sidebar_mpu_bottom;
-        break;
-    // Add more cases if needed
-    default:
-        // Code to execute if $in_content_mpus doesn't match any case
-        echo "Default case";
-}
-?>
+    $sidebar_mpu_bottom = get_field('sidebar_mpu_bottom', 'option');
+    echo $sidebar_mpu_bottom ;
+    ?>
 
     </div>
 </div>
