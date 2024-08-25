@@ -19,53 +19,66 @@ echo $header_scripts;
 
 <!-- Adtech -->
 
-
 <?php  
-// Only show on the homepage and landing pages
-if (!is_singular()) {
-    $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
-    $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
-    $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
-}
-// Only show on posts
+// Global adtech header script (if any)
+$adtech_header_script = get_field('adtech_header_script', 'option');
+echo $adtech_header_script;
 
+// Variables for homepage ads
+$leaderboard_hp_top_header_path = '';
+$leaderboard_hp_middle_header_path = '';
+$leaderboard_hp_bottom_header_path = '';
+
+// Variables for post (singular) ads
+$leaderboard_ros_top_header_path = '';
+$sidebar_mpu_top_header_path = '';
+$sidebar_mpu_middle_header_path = '';
+$sidebar_mpu_bottom_header_path = '';
+$incontent_mpu_header_path = '';
+
+// Check if the page is singular (e.g., a post)
 if (is_singular()) {
     $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
     $sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
     $sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
     $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
     $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
-    }
-// You can keep other fields if they are required outside of the 'is_single' check
-$adtech_header_script = get_field('adtech_header_script', 'option');
-
-echo $adtech_header_script;
+} else { 
+    // If not singular (e.g., homepage or landing pages)
+    $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
+    $leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
+    $leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
+}
 ?>
 
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
-    // In-content MPU
-    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
 
-    // Sidebar top MPU
-    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
+    <?php if (is_singular()) : ?>
+      // In-content MPU
+      googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
 
-    // Sidebar Middle MPU
-    googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
+      // Sidebar Top MPU
+      googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
 
-    // Sidebar Bottom MPU
-    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
+      // Sidebar Middle MPU
+      googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
 
-    <?php if (is_single()) : ?>
-        // Homepage Top Leaderboard
-        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_top_header_path; ?><?php } ?>').addService(googletag.pubads());
+      // Sidebar Bottom MPU
+      googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
 
-        // Homepage Leaderboard Middle
-        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_middle_header_path; ?><?php } ?>').addService(googletag.pubads());
+      // ROS Top Leaderboard
+      googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addService(googletag.pubads());
+    <?php else : ?>
+      // Homepage Top Leaderboard
+      googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
 
-        // Homepage Leaderboard Bottom
-        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_bottom_header_path; ?><?php } ?>').addService(googletag.pubads());
+      // Homepage Middle Leaderboard
+      googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
+
+      // Homepage Bottom Leaderboard
+      googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
     <?php endif; ?>
 
     // Enable Single Request and services
@@ -73,6 +86,8 @@ echo $adtech_header_script;
     googletag.enableServices();
   });
 </script>
+
+
 
 
 
