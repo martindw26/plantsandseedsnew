@@ -130,9 +130,10 @@ echo $affiliate_scripts;
 $leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
 $leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
 
-if ($leaderboard_top_body_script_switch === 'on' && !empty($leaderboard_top_body_script)) {
+
+if ($leaderboard_top_body_script_switch === 'on') {
     echo '<section class="ad_header_top">';
-    echo wp_kses_post($leaderboard_top_body_script);  
+    echo $leaderboard_top_body_script;
     echo '</section>';
 } 
 ?>
