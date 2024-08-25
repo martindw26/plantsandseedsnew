@@ -41,14 +41,14 @@ echo $adtech_header_script;
 window.googletag = window.googletag || {cmd: []};
 googletag.cmd.push(function() {
     // Define ad slots using PHP variables
-    googletag.defineSlot('<?php echo esc_js($incontent_mpu_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($incontent_mpu_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo ($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
 
     // Enable single request mode for faster ad loading
     googletag.pubads().enableSingleRequest();
