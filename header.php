@@ -16,13 +16,18 @@ $header_scripts = get_field('header_scripts', 'option');
     <title><?php echo get_the_title(); ?></title>    
     <?php wp_head();?>
 
+<!-- ACF Fields -->
+
 <?php 
+//Ads
 $leaderboard_top_script = get_field('leaderboard_ros_top_script', 'option');
 $leaderboard_top_script = get_field('leaderboard_top_script', 'option');
 $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
+//Affilaites
+$affiliate_scripts = get_field('affiliate_scripts', 'option');
 ?>
 
 </head>
