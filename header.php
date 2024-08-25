@@ -27,11 +27,7 @@ $leaderboard_middle_script = get_field('leaderboard_middle_script', 'option');
 $sidebar_mpu_top_script = get_field('sidebar_mpu_top_script', 'option');
 $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
-
-
-
 $incontentmpuheader = get_field('in-content_mpu_header', 'option');
-echo $incontentmpuheader;
 
 
 //Affilaites
