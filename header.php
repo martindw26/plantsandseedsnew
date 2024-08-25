@@ -38,21 +38,22 @@ $incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
-    // Define ad slots for all possible ad paths
-    googletag.defineSlot('<?php echo esc_js($incontent_mpu_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
-    googletag.defineSlot('<?php echo esc_js($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
+    // Define all ad slots using the values fetched from ACF fields
+    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>', [300, 250], 'incontent-mpu').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>', [300, 250], 'sidebar-mpu-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>', [300, 250], 'sidebar-mpu-middle').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>', [300, 250], 'sidebar-mpu-bottom').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>', [728, 90], 'leaderboard-ros-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>', [728, 90], 'leaderboard-hp-top').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>', [728, 90], 'leaderboard-hp-middle').addService(googletag.pubads());
+    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>', [728, 90], 'leaderboard-hp-bottom').addService(googletag.pubads());
 
     // Enable Single Request and services
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
 </script>
+
 
 
 
