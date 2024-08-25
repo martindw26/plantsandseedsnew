@@ -28,6 +28,7 @@ $sidebar_mpu_middle_script = get_field('sidebar_mpu_middle_script', 'option');
 $sidebar_mpu_bottom_script = get_field('sidebar_mpu_bottom_script', 'option');
 //Affilaites
 $affiliate_scripts = get_field('affiliate_scripts', 'option');
+echo $affiliate_scripts;
 ?>
 
 </head>
