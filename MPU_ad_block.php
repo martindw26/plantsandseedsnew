@@ -1,5 +1,9 @@
 <head>
 
+<?php
+$incontentmpuheader = get_field('in-content_mpu_header', 'option');
+echo $incontentmpuheader;
+?>
 
 
 <style>
