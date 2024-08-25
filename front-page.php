@@ -9,6 +9,17 @@ get_header();
 <!-- ################ TOP SECTION ################### -->
 
 
+<?php 
+$leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
+$leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
+
+if ($leaderboard_top_body_script_switch === 'on' && !empty($leaderboard_top_body_script)) {
+    echo '<section class="ad_header_top">';
+    echo wp_kses_post($leaderboard_top_body_script);  
+    echo '</section>';
+} 
+?>
+
 <div class="row mt-2">
 
     <div class="col-lg">
@@ -144,18 +155,7 @@ $category_link = get_category_link($category->term_id);
 <!-- ################ END TOP SECTION ################### -->
 
 
-<?php 
-$leaderboard_top_body_script = get_field('leaderboard_top_body_script', 'option');
-$leaderboard_top_body_script_switch = get_field('leaderboard_top_body_script_switch', 'option');
 
-if ($leaderboard_top_body_script_switch === 'on' && !empty($leaderboard_top_body_script)) {
-    echo '<section class="ad_header_top">';
-    echo wp_kses_post($leaderboard_top_body_script);  
-    echo '</section>';
-} 
-?>
-
-<?php echo $leaderboard_top_body_script;?>
 
 
 <!-- ################ MIDDLE SECTION ################### -->
