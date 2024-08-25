@@ -149,7 +149,7 @@ $leaderboard_middle_1_body_script = get_field('leaderboard_middle_1_body_script'
 $leaderboard_middle_1_body_script_switch = get_field('leaderboard_middle_1_body_script_switch', 'option');
 
 
-if ($leaderboard_top_middle_1_script_switch === 'on') {
+if ($leaderboard_middle_1_body_script_switch === 'on') {
     echo '<section class="ad_header_top">';
     echo $leaderboard_middle_1_body_script;
     echo '</section>';
