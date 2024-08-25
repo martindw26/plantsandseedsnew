@@ -22,15 +22,35 @@ echo $header_scripts;
 <?php  
 $adtech_header_script = get_field('adtech_header_script', 'option');
 echo $adtech_header_script;
-$leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
-$leaderboard_hp_middle_header_path = get_field('leaderboard_hp_middle_header_path', 'option');
-$leaderboard_hp_bottom_header_path = get_field('leaderboard_hp_bottom_header_path', 'option');
-$leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
-$sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
-$sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
-$sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
-$incontent_mpu_header_path = get_field('in-content_mpu_header_path', 'option');
 ?>
+
+<script>
+window.googletag = window.googletag || {cmd: []};
+googletag.cmd.push(function() {
+
+    // In Content MPU
+    googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
+
+    // Sidebar Top MPU
+    googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
+    
+    // Sidebar Bottom MPU
+    googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
+    
+    // Leaderboard ROS Top
+    googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addService(googletag.pubads());
+    
+    // Homepage Leaderboard Top
+    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
+    
+    // Homepage Leaderboard Middle
+    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+    
+    googletag.pubads().enableSingleRequest();
+    googletag.enableServices();
+});
+</script>
+
 
 <script>
 window.googletag = window.googletag || {cmd: []};
