@@ -5,6 +5,7 @@
 <head>
 <?php 
 $header_scripts = get_field('header_scripts', 'option');
+echo $header_scripts;
 ?>
 
     <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
