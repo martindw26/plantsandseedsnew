@@ -59,13 +59,13 @@ echo $adtech_header_script;
 
     <?php if (is_single()) : ?>
         // Homepage Top Leaderboard
-        googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
+        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_top_header_path; ?><?php } ?>').addService(googletag.pubads());
 
         // Homepage Leaderboard Middle
-        googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
+        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_middle_header_path; ?><?php } ?>').addService(googletag.pubads());
 
         // Homepage Leaderboard Bottom
-        googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+        googletag.defineSlot('<?php if (is_single()) { ?><?php echo $leaderboard_hp_bottom_header_path; ?><?php } ?>').addService(googletag.pubads());
     <?php endif; ?>
 
     // Enable Single Request and services
