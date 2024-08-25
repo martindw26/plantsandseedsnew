@@ -174,7 +174,7 @@ if ($sidebartogglesingle === "yes") {
                 </div>
                 <div class="sidebar-mpu-middle">
                 <?php 
-                $sidebar_mpu_top = get_field('sidebar_mpu_top', 'option');
+                $sidebar_mpu_top = get_field('sidebar_mpu_top_body_script', 'option');
                 echo $sidebar_mpu_top;
                 ?>
 
@@ -251,7 +251,7 @@ if ($sidebartogglesingle === "yes") {
     <div class="sidebar-mpu-bottom">
    
     <?php 
-    $sidebar_mpu_bottom = get_field('sidebar_mpu_bottom', 'option');
+    $sidebar_mpu_bottom = get_field('sidebar_mpu_bottom_body_script', 'option');
     echo $sidebar_mpu_bottom ;
     ?>
 
