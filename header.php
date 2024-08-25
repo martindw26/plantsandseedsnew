@@ -20,16 +20,14 @@ echo $header_scripts;
 <!-- Adtech -->
 
 <?php  
-// Global adtech header script (if any)
+// Fetch the global adtech header script
 $adtech_header_script = get_field('adtech_header_script', 'option');
 echo $adtech_header_script;
 
-// Variables for homepage ads
+// Initialize ad paths with default values
 $leaderboard_hp_top_header_path = '';
 $leaderboard_hp_middle_header_path = '';
 $leaderboard_hp_bottom_header_path = '';
-
-// Variables for post (singular) ads
 $leaderboard_ros_top_header_path = '';
 $sidebar_mpu_top_header_path = '';
 $sidebar_mpu_middle_header_path = '';
@@ -54,31 +52,34 @@ if (is_singular()) {
 <script>
   window.googletag = window.googletag || {cmd: []};
   googletag.cmd.push(function() {
-
     <?php if (is_singular()) : ?>
-      // In-content MPU
-      googletag.defineSlot('<?php echo $incontent_mpu_header_path; ?>').addService(googletag.pubads());
-
-      // Sidebar Top MPU
-      googletag.defineSlot('<?php echo $sidebar_mpu_top_header_path; ?>').addService(googletag.pubads());
-
-      // Sidebar Middle MPU
-      googletag.defineSlot('<?php echo $sidebar_mpu_middle_header_path; ?>').addService(googletag.pubads());
-
-      // Sidebar Bottom MPU
-      googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
-
-      // ROS Top Leaderboard
-      googletag.defineSlot('<?php echo $leaderboard_ros_top_header_path; ?>').addService(googletag.pubads());
+      // Define ad slots for singular pages (posts)
+      <?php if (!empty($incontent_mpu_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($incontent_mpu_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($sidebar_mpu_top_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_top_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($sidebar_mpu_middle_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_middle_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($sidebar_mpu_bottom_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($sidebar_mpu_bottom_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($leaderboard_ros_top_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($leaderboard_ros_top_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
     <?php else : ?>
-      // Homepage Top Leaderboard
-      googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
-
-      // Homepage Middle Leaderboard
-      googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
-
-      // Homepage Bottom Leaderboard
-      googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+      // Define ad slots for non-singular pages (homepage or landing pages)
+      <?php if (!empty($leaderboard_hp_top_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_top_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($leaderboard_hp_middle_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_middle_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
+      <?php if (!empty($leaderboard_hp_bottom_header_path)) : ?>
+        googletag.defineSlot('<?php echo esc_js($leaderboard_hp_bottom_header_path); ?>').addService(googletag.pubads());
+      <?php endif; ?>
     <?php endif; ?>
 
     // Enable Single Request and services
@@ -86,6 +87,7 @@ if (is_singular()) {
     googletag.enableServices();
   });
 </script>
+
 
 
 
