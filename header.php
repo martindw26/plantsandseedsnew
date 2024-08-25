@@ -17,14 +17,19 @@ echo $header_scripts;
     <title><?php echo get_the_title(); ?></title>    
     <?php wp_head();?>
 
-<!-- ACF Fields -->
+<!-- Adtech -->
+
 
 <?php
-// Fetching fields from options
+// Only show on the homepage and landing pages
+if (!is_singular()) {
+    $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
+    $leaderboard_hp_middle_header_path = get_field('leaderboard_middle_header_path', 'option');
+    $leaderboard_hp_bottom_header_path = get_field('leaderboard_bottom_header_path', 'option');
+}
+
+// You can keep other fields if they are required outside of the 'is_single' check
 $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
-$leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
-$leaderboard_hp_middle_header_path = get_field('leaderboard_middle_header_path', 'option');
-$leaderboard_hp_bottom_header_path = get_field('leaderboard_bottom_header_path', 'option');
 $sidebar_mpu_top_header_path = get_field('sidebar_mpu_top_header_path', 'option');
 $sidebar_mpu_middle_header_path = get_field('sidebar_mpu_middle_header_path', 'option');
 $sidebar_mpu_bottom_header_path = get_field('sidebar_mpu_bottom_header_path', 'option');
@@ -49,20 +54,24 @@ echo $adtech_header_script;
     // Sidebar Bottom MPU
     googletag.defineSlot('<?php echo $sidebar_mpu_bottom_header_path; ?>').addService(googletag.pubads());
 
-    // Homepage Top Leaderboard
-    googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
+    <?php if (is_single()) : ?>
+        // Homepage Top Leaderboard
+        googletag.defineSlot('<?php echo $leaderboard_hp_top_header_path; ?>').addService(googletag.pubads());
 
-    // Homepage Leaderboard Middle
-    googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
+        // Homepage Leaderboard Middle
+        googletag.defineSlot('<?php echo $leaderboard_hp_middle_header_path; ?>').addService(googletag.pubads());
 
-    // Homepage Leaderboard Bottom
-    googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+        // Homepage Leaderboard Bottom
+        googletag.defineSlot('<?php echo $leaderboard_hp_bottom_header_path; ?>').addService(googletag.pubads());
+    <?php endif; ?>
 
     // Enable Single Request and services
     googletag.pubads().enableSingleRequest();
     googletag.enableServices();
   });
 </script>
+
+
 
 
 <?php
