@@ -20,7 +20,7 @@ echo $header_scripts;
 <!-- Adtech -->
 
 
-<?php
+<?php  
 // Only show on the homepage and landing pages
 if (!is_singular()) {
     $leaderboard_hp_top_header_path = get_field('leaderboard_hp_top_header_path', 'option');
