@@ -246,10 +246,7 @@ padding: 2px;
         display: flex;
         justify-content: center;
         align-items: center;
-        margin-bottom: 10px;
         background-color:var(--ad-background-color);
-        border-top: 1px solid lightgrey;
-        border-bottom: 1px solid lightgrey;
     }
 }
 
