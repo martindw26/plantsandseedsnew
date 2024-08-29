@@ -242,7 +242,7 @@ padding: 2px;
 }
 
     section.ad_header_top  {
-        height: 100px; 
+        height: 110px; 
         display: flex;
         justify-content: center;
         align-items: center;
@@ -268,7 +268,7 @@ padding: 2px;
 }
 
     section.ros_ad_header  {
-        height: 100px; 
+        height: 140px; 
         display: flex;
         justify-content: center;
         align-items: center;
