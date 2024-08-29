@@ -3,9 +3,11 @@
 <div class="container p-2 mt-2">
 <?php 
 
+// Initialize the $ros_ad_header variable
+$ros_ad_header = get_field('ros_ad_header', 'option');
 
 if (!is_singular()) {
-    $leaderboard_ros_top_header_path = get_field('$leaderboard_ros_top_header_path', 'option');
+    $leaderboard_ros_top_header_path = get_field('leaderboard_ros_top_header_path', 'option');
 }
 
 if ($ros_ad_header === 'on' && is_single()) { // Check if $ros_ad_header is 'on' and the current post is a single post
